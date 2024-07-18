@@ -25,8 +25,8 @@ def main():
     timeframe = "1d"
     limit = 55
 
-    smaller_limit = limit/7
-    larger_limit = limit/3
+    smaller_limit = 5
+    larger_limit = 30
 
     data = fetch_ohlcv(symbol, timeframe, limit)
     data[f'SMA_{smaller_limit}'] = data['close'].rolling(window=3).mean()
